@@ -1,6 +1,5 @@
-from aiogram import Bot, Dispatcher, executor
+from aiogram import executor
 from regular_commands import commands
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
 import logging
 from config import dp
 import DataBase
@@ -17,4 +16,4 @@ commands(dp)
 
 
 if __name__ == '__main__':
-    executor.start_polling(dispatcher=dp, skip_updates=True, on_startup=on_startup)
+    executor.start_polling(dispatcher=dp, skip_updates=True, on_startup=on_startup, timeout=2)

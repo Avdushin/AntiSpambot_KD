@@ -248,14 +248,14 @@ async def successful_payment(message: types.Message):
 
 def commands(dp: Dispatcher, ):
     dp.register_message_handler(start_cmd, commands=['start'])
-    dp.register_callback_query_handler(cancel, lambda c: c.data == 'cancel', state='*')
     dp.register_callback_query_handler(menu_back, lambda c: c.data == 'menu_back')
     dp.register_callback_query_handler(back, lambda c: c.data == 'back')
     dp.register_callback_query_handler(info_cmd, lambda c: c.data == 'info')
-    dp.register_callback_query_handler(create_bot, lambda c: c.data == 'create_bot', state=None)
+    dp.register_callback_query_handler(extend_all_bot, lambda c: c.data == 'extend_all_bot')
     dp.register_callback_query_handler(menu, lambda c: c.data == "menu" )
     dp.register_callback_query_handler(my_bot, lambda c: c.data == "my_bot" )
+    dp.register_callback_query_handler(cancel, lambda c: c.data == 'cancel', state='*')
+    dp.register_callback_query_handler(create_bot, lambda c: c.data == 'create_bot', state=None)
     dp.register_message_handler(get_chat_id, state=FSM.get_chat_id )
     dp.register_callback_query_handler(bot_info_, lambda c: c.data.startswith('bot_info_'))
-    dp.register_callback_query_handler(extend_all_bot, lambda c: c.data == 'extend_all_bot')
     dp.register_callback_query_handler(payment_data, lambda c: c.data == 'yes', state=FSM.payment_data)

@@ -1,6 +1,4 @@
 import psycopg2
-from datetime import date
-from datetime import datetime, timedelta
 from config import user, password, host, port, database
 
 def base_connect():

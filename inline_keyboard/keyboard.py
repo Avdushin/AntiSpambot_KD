@@ -1,5 +1,4 @@
-from aiogram import Bot, Dispatcher, executor, types
-import DataBase
+from aiogram import types
 
 # Основная клавиатура
 inline_keyboard = types.InlineKeyboardMarkup(row_width=2)
